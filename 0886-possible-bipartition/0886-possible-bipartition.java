@@ -20,8 +20,7 @@ class Solution {
             if(color[i]==-1){
                 if(!bfs(al,i,color)) return false;
             }
-        }
-        return true;
+        }return true;
     }
     public boolean bfs(ArrayList<Integer>[]al,int node,int[]color){
         Queue<Integer>q=new LinkedList<>();
