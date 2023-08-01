@@ -1,20 +1,28 @@
 class Solution {
-    public void rotate(int[][] mat) {
-        int dum1[][]=new int[mat.length][mat[0].length];
-        //System.out.print(Arrays.toString(mat[2]));
-        int ind=0;
-        int len=mat.length-1;
-
-        for(int i=0;i<mat.length;i++){
-            for(int j=0;j<mat.length;j++){
-                dum1[j][len-i]=mat[i][j];
+    public void rotate(int[][] matrix) 
+    {
+        int col = 0;
+        int row = matrix.length-1;
+        int mat[][] = new int[matrix.length][matrix.length];
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix.length;j++){
+                mat[i][j] = matrix[i][j];
             }
         }
-        for(int i=0;i<mat.length;i++){
-            for(int j=0;j<mat.length;j++){
-                mat[i][j]=dum1[i][j];
+        
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix.length;j++)
+            {
+                //System.out.println(row+","+col+" "+mat[row][col]);
+                matrix[i][j] = mat[row--][col];
+                
             }
+            row = matrix.length-1;
+            col++;
         }
-
+        
     }
+
+    
 }
