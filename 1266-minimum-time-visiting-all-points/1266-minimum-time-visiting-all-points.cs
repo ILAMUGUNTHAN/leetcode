@@ -1,24 +1,8 @@
 public class Solution {
-    public int MinTimeToVisitAllPoints(int[][] p) {
+    public int MinTimeToVisitAllPoints(int[][] points) {
         
         int res = 0;
-        
-        HashSet<int[]> s = new HashSet<int[]>(); 
-        for(int i=0;i<p.Length;i++)
-        {
-            s.Add(new int[]{p[i][0],p[i][1]});
-        }
-        
-        int[][] points = new int[s.Count][];
-        
-        int ind=0;
-        foreach(int[] arr in s)
-        {
-            points[ind] = new int[2];
-            points[ind][0] = arr[0];
-            points[ind++][1] = arr[1];
-        }
-        Console.WriteLine(p.Length+" "+s.Count);
+
         for(int i=0;i<points.Length-1;i++)
         {
             int x1 = points[i][0];
