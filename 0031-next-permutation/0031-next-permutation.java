@@ -1,9 +1,5 @@
 class Solution {
     public void nextPermutation(int[] A) {
-        //1)mark 1st decreasing elem i
-        //2)mark 1st element greater than i as j
-        //3)swap(arr[i],arr[j])
-        //4)reverse i+1 to len
         int i = A.length-2;
         while(i>=0 && A[i]>=A[i+1]) i--;
         
@@ -15,15 +11,17 @@ class Solution {
         }
         reverse(A,i+1,A.length-1);
         
-    
     }
-
-public void swap(int[] A,int i,int j){
-    int tmp=A[i];
-    A[i]=A[j];
-    A[j]=tmp;
-}
-public void reverse(int []A,int i,int j){
-    while(i<j)swap(A,i++,j--);
-}
+    
+    public void swap(int[] nums,int a, int b)
+    {
+        int tem = nums[a];
+        nums[a] = nums[b];
+        nums[b] = tem;
+    }
+    
+    public void reverse(int []A,int i,int j)
+    {
+        while(i<j) swap(A,i++,j--);
+    }
 }
